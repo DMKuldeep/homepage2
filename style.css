@@ -41,22 +41,19 @@
 }
 
 
-
-
-
-
 .mt-51 {
   margin-top: -19px;
 }
 
+
 .lens {
-  top: -3px;
   left: 110px;
   width: 18px;
   height: 18px;
-  margin-top: 43px;
+  margin-top: 16px;
   position: absolute;
   flex-shrink: 0;
+  margin-left: 10px;
 }
 
 
@@ -732,17 +729,24 @@ p.SÖTBELLA {
 .contentimage {
   justify-items: baseline;
   margin-left: 13px;
+  margin-top: 16px;
+  justify-content: center;
 
 }
+
 
 .gap-3 {
   display: flex;
   width: 141px;
   align-items: center;
   gap: 24px;
-  margin-top: 16px;
-
+  margin-left: 0px;
 }
+
+/* .col-md-4.first-col.d-flex.flex-column.align-items-center {
+  margin-top: -74px;
+} */
+
 
 .strike-through {
   text-decoration: line-through;
@@ -1242,6 +1246,9 @@ footer h5 {
   font-weight: bold;
 }
 
+.list-inline-item{
+  margin-top: -30px;
+}
 .footer-links {
   list-style: none;
   padding: 0;
