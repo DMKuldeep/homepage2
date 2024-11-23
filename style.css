@@ -1,10 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap");
 
 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body{
+  overflow-x: hidden;
+}
+
 .container-fluid {
   display: flex;
   padding: 0;
   margin: 0;
+}
+.homepagevideo{
+  width: 1442px;
+  flex-shrink: 0;
 }
 
 .image-container {
@@ -22,15 +36,71 @@
 
 }
 
+.col-md-6.p-0.image5 {
+  width: 300px;
+}
+
+.col-md-6.p-0.image6 {
+  width: 300px;
+}
+
+
+
+
 .content {
   position: fixed;
   top: 0;
   color: white;
-  width: 100%;
-  margin-top: 54px;
+  margin-top: 32px;
   justify-content: center;
   align-items: center;
+  width: 1440px;
+  height: 64px;
+  flex-shrink: 0;
+  z-index: 1;
 }
+
+
+
+.content .list-inline-item:not(:last-child) {
+  margin-right: 24PX;
+}
+
+.image1,
+.image2 {
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  /* Hide video by default */
+}
+
+.image1:hover .video,
+.image2:hover .video {
+  display: block;
+  /* Show video on hover */
+}
+
+.image1:hover .image,
+.image2:hover .image {
+  display: none;
+  /* Hide image on hover */
+}
+
+
 
 .section6 p {
   color: white;
@@ -40,27 +110,30 @@
   font-weight: 400;
 }
 
+.font {
+  font-family: 'Lato';
+}
 
-.mt-51 {
-  margin-top: -19px;
+.custom-list {
+  display: flex;
+  /* Make it a flex container */
+  gap: 24px;
+  /* Creates a gap of 24px between each <li> */
 }
 
 
-.lens {
-  left: 110px;
-  width: 18px;
-  height: 18px;
-  margin-top: 16px;
-  position: absolute;
-  flex-shrink: 0;
-  margin-left: 10px;
+
+.section6 p {
+  color: white;
+  text-align: center;
+  font-family: Alike;
+  font-size: 36px;
+  font-weight: 400;
 }
 
-
-.first-col>*+* {
-  margin-top: 24px;
+.rightalign span:not(:last-child) {
+  margin-right: 24px;
 }
-
 
 p.SÖTBELLA {
   color: #FFF;
@@ -70,90 +143,10 @@ p.SÖTBELLA {
   font-style: normal;
   font-weight: 400;
   line-height: 64px;
+  margin-top: 32px;
 }
 
 
-.rightalign span:not(:last-child) {
-  margin-right: 24px;
-}
-
-.section6 p {
-  color: white;
-  text-align: center;
-  font-family: Alike;
-  font-size: 36px;
-  font-weight: 400;
-}
-
-
-.col-md-6.p-0.image5 {
-  width: 354px;
-  height: 444px;
-  object-fit: cover;
-}
-
-.col-md-6.p-0.image6 {
-  width: 354px;
-  height: 444px;
-  object-fit: cover;
-}
-
-.image5,
-.image6 {
-  width: 354px;
-  /* Adjust this if needed */
-  height: 444px;
-  /* Ensure this is set */
-  background-size: cover;
-  /* This ensures the image covers the div */
-  background-position: center;
-  /* Centers the image */
-}
-
-.image5,
-.image6 {
-  width: 100%;
-  /* Makes them responsive */
-  height: 444px;
-  /* Set height */
-}
-
-.position-relative {
-  position: relative;
-  z-index: 1;
-  /* Ensure images are above the video */
-}
-
-.d-flex {
-  display: flex;
-  margin: 0;
-  /* Remove default margin */
-  padding: 0;
-  /* Remove default padding */
-}
-
-.videosecond {
-
-  width: 100%;
-  height: 888px;
-
-  object-fit: cover; /* Ensures the video fills the container without distortion */
- 
-}
-
-.profile {
-  top: 35px;
-  left: 1228px;
-  width: 52px;
-  height: 18px;
-}
-
-.cart {
-  top: 35px;
-  left: 0px;
-  width: 18px;
-  height: 18px;
-}
 
 .ul li a img {
   top: 0px;
@@ -172,10 +165,34 @@ p.SÖTBELLA {
   margin-top: 43px;
 }
 
+.testimonial {
+  color: #000;
+  text-align: center;
+  font-family: Alike;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 44px;
+  margin-bottom: 40px;
 
+}
 
+.line4 {
+  text-decoration: "underline";
+}
 
+p.line4 {
+  text-decoration: underline;
+}
 
+.blog2 {
+  margin-top: 25px;
+  margin-left: 25px;
+  height: 230px;
+  width: 430px;
+  background-color: #281a1a21;
+  /* color: #5a1010; */
+}
 
 
 .app-icon {
@@ -196,15 +213,17 @@ p.SÖTBELLA {
 
 
 .image5 {
-
+  /* width: 300px;
+  height: 357px; */
   background-image: url("./assets/images/section5image2.png");
   background-size: cover;
   background-position: center;
 }
 
 .image6 {
-
-  background-image: url("./assets/images/section5image3.png");
+  /* width: 300px;
+  height: 357px; */
+  background-image: url("./assets/images/lastsection\ image.png");
   background-size: cover;
   background-position: center;
 }
@@ -218,6 +237,58 @@ p.SÖTBELLA {
     background-position: center;
   }
 }
+
+
+
+
+
+
+.section3text .rightconer .bottom-right {
+  /* margin-bottom: 10px; */
+  right: 16px;
+  color: #FFF;
+  text-align: center;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  /* text-align-last: right; */
+  margin-top: 103%;
+  margin-left: 580px;
+}
+
+.section4text .rightconer .bottom-right {
+  /* margin-bottom: 10px; */
+  right: 16px;
+  color: #FFF;
+  text-align: center;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  /* text-align-last: right; */
+  margin-top: 103%;
+  margin-left: 580px;
+}
+
+
+.section2text .rightconer .bottom-right {
+  /* margin-bottom: 10px; */
+  right: 16px;
+  color: #FFF;
+  text-align: center;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  /* text-align-last: right; */
+  margin-top: 103%;
+  margin-left: 580px;
+}
+
 
 
 .videoblack {
@@ -594,12 +665,60 @@ p.SÖTBELLA {
   flex-shrink: 0;
 }
 
-
 .col-md-6.p-0.image5 {
-  width: 300px;
+  width: 354px;
+  height: 444px;
+  object-fit: cover;
 }
+
 .col-md-6.p-0.image6 {
-  width: 300px;
+  width: 354px;
+  height: 444px;
+  object-fit: cover;
+}
+
+.image5,
+.image6 {
+  width: 354px;
+  /* Adjust this if needed */
+  height: 444px;
+  /* Ensure this is set */
+  background-size: cover;
+  /* This ensures the image covers the div */
+  background-position: center;
+  /* Centers the image */
+}
+
+.image5,
+.image6 {
+  width: 100%;
+  /* Makes them responsive */
+  height: 444px;
+  /* Set height */
+}
+
+.position-relative {
+  position: relative;
+  z-index: 1;
+  /* Ensure images are above the video */
+}
+
+.d-flex {
+  display: flex;
+  margin: 0;
+  /* Remove default margin */
+  padding: 0;
+  /* Remove default padding */
+}
+
+.videosecond {
+
+  width: 100%;
+  height: 889px;
+
+  object-fit: cover;
+  /* Ensures the video fills the container without distortion */
+
 }
 
 
@@ -710,7 +829,17 @@ p.SÖTBELLA {
   /* 157.143% */
 }
 
-
+/* .imageheading {
+  color: #000;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  justify-content: left;
+} */
 
 .imageheading {
   color: #000;
@@ -729,23 +858,121 @@ p.SÖTBELLA {
 .contentimage {
   justify-items: baseline;
   margin-left: 13px;
-  margin-top: 16px;
-  justify-content: center;
 
 }
-
 
 .gap-3 {
   display: flex;
   width: 141px;
   align-items: center;
   gap: 24px;
+  margin-top: 16px;
   margin-left: 0px;
+
 }
 
-/* .col-md-4.first-col.d-flex.flex-column.align-items-center {
-  margin-top: -74px;
-} */
+
+
+.section6 {
+  position: relative;
+  /* Ensure the parent div has relative positioning */
+}
+
+.section6 .centered {
+  position: absolute;
+  top: 50%;
+  /* Center vertically */
+  left: 50%;
+  /* Center horizontally */
+  transform: translate(-50%, -50%);
+  /* Adjust for the element's own dimensions */
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.40);
+  font-family: MonteCarlo;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 104px;
+  /* 108.333% */
+}
+
+.section1text .bottom {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFF;
+  text-align: center;
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 68px;
+  display: flex;
+  width: 195px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #FFF;
+
+}
+
+
+.section1text .button:hover {
+  border: 1px solid #000000;
+}
+
+.section2text .rightconer p {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  margin-bottom: 68px;
+  width: 195px;
+  padding: 10px;
+  align-items: end;
+  gap: 10px;
+  border: 1px solid #FFF;
+  color: #FFF;
+  text-align: center;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.section1text {
+  position: relative;
+  /* Ensure the parent is positioned relative for absolute positioning of children */
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  /* Center vertically */
+  left: 50%;
+  /* Center horizontally */
+  transform: translate(-50%, -50%);
+  /* Adjust for exact center */
+  color: #FFF;
+  text-align: center;
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  display: flex;
+  width: 195px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 
 
 .strike-through {
@@ -815,32 +1042,12 @@ p.SÖTBELLA {
   /* Prevent shrinking */
 }
 
-.container-fluid {
-  padding: 0;
-  /* Ensure no outer padding */
-}
 
-.row {
-  margin-right: 0;
-  /* Remove row gutter */
-  margin-left: 0;
-}
 
-.col-md-6 {
-  padding: 0;
-  /* Remove padding between columns */
-}
 
-.row {
-  margin-right: 0;
-  /* Remove horizontal gutter */
-  margin-left: 0;
-}
 
-.col-md-6 {
-  padding: 0;
-  /* Remove padding */
-}
+
+
 
 
 
@@ -870,6 +1077,24 @@ p.SÖTBELLA {
 }
 
 
+
+/* Position the heart SVG */
+.position-relative {
+  position: relative;
+}
+
+.heart-circle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+}
+
+.heart-circle svg {
+  margin-top: 8px;
+  margin-left: -18px;
+}
 
 
 
@@ -901,7 +1126,20 @@ p.SÖTBELLA {
 }
 
 
+/* Default Heart Icon */
+.heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 12px;
+  width: 11px;
+  cursor: pointer;
+}
 
+.heart.active {
+  filter: invert(0%) sepia(100%) saturate(500%) hue-rotate(0deg);
+  transform: scale(1.1);
+}
 
 svg {
   margin-top: 8px;
@@ -917,6 +1155,10 @@ svg {
 
 
 
+
+
+
+
 .item {
   height: 720px;
   width: 580px;
@@ -926,34 +1168,88 @@ svg {
   height: 714px;
   width: 628px;
 }
-
-
-
-
-
-@media (max-width: 768px) {
-  .whitetopgirl {
-    margin-left: 0;
-  }
-
-  .para2 {
-    margin-top: 80px;
-  }
-
-  .divimage {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .image-wrapper {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .image {
-    flex: 1 1 calc(100% - 16px);
-  }
+.video {
+  position: absolute; /* Position the video absolutely */
+  top: 0;
+  left: 0;
+  width: 100%; /* Make video cover the parent */
+  height: 100%; /* Make video cover the parent */
+  object-fit: cover; /* Cover the area without distortion */
+  display: none; /* Hide video by default */
 }
+.position-relative:hover .video {
+  display: block; /* Show video on hover */
+}
+
+.position-relative:hover .image {
+  display: none; /* Hide image on hover */
+}
+
+.image {
+  width: 100%; /* Ensure image takes the full width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+
+
+.divsize {
+  height: 736px;
+  width: 1280px;
+  margin-top: 64px;
+  margin-bottom: 64px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.para2 {
+
+  margin-top: 126px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #000;
+  text-align: center;
+
+  line-height: 26px;
+  /* 144.444% */
+}
+
+.para2 .contentpara {
+  color: #000;
+  text-align: center;
+  font-family: 'Alike';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  /* 144.444% */
+  margin-bottom: 5px;
+}
+
+.para2 .contentpara1 {
+  color: #000;
+
+  text-align: center;
+  font-family: 'Inter';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  /* 150% */
+  text-transform: uppercase;
+  margin-bottom: 24px;
+
+
+}
+
+
+
 
 .videopic {
   display: flex;
@@ -984,18 +1280,31 @@ svg {
 }
 
 .faq {
+
+  display: flex;
+  width: 1440px;
+  padding: 24px 0px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
   background-color: #000;
-  padding: 25px 0;
 }
 
 .faq img {
   max-width: 80px;
-  margin-bottom: 8px;
 }
 
 .faq p {
-  font-size: 14px;
-  color: #fff;
+
+  color: #FFF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  /* 150% */
+  text-transform: capitalize;
 }
 
 .faq ul {
@@ -1003,9 +1312,7 @@ svg {
   margin: 0;
 }
 
-.faq-item {
-  flex: 1;
-}
+
 
 .spotlight {
   background: url("./assets/images/backgroundspotlight.png") no-repeat center center;
@@ -1040,6 +1347,11 @@ svg {
   margin-bottom: 56px;
 }
 
+
+/* img.img-fluid {
+  height: 332px;
+  width: 302px;
+} */
 
 .footer li {
   color: #000;
@@ -1100,16 +1412,6 @@ svg {
 }
 
 
-
-/* Input container */
-
-
-
-
-
-
-
-
 .withus {
   font-family: 'Lato', sans-serif;
   font-size: 14px;
@@ -1126,8 +1428,69 @@ svg {
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-  /* 166.667% */
   text-transform: capitalize;
+}
+
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container .video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-container:hover .video {
+  display: block;
+}
+
+
+.container1 .bottommargin {
+  margin-bottom: 48px;
+}
+
+.container1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.left-col,
+.right-col {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+  color: white;
+}
+
+.left-col {
+  transform: translateX(30%);
+}
+
+.right-col {
+  transform: translateX(30%);
+}
+
+.container1:hover .left-col {
+  transform: translateX(40%);
+}
+
+.container1:hover .right-col {
+  transform: translateX(-40%);
 }
 
 
@@ -1144,8 +1507,6 @@ img.img-fluid.model2 {
 
 
 
-
-
 @media (max-width: 768px) {
   .faq ul {
     flex-direction: column;
@@ -1156,19 +1517,7 @@ img.img-fluid.model2 {
   }
 }
 
-@media (max-width: 992px) {
-  .newarrive .col-6 {
-    flex: 1 1 calc(50% - 15px);
-    max-width: calc(50% - 15px);
-  }
-}
 
-@media (max-width: 576px) {
-  .newarrive .col-6 {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-}
 
 
 .left-column {
@@ -1182,7 +1531,6 @@ img.img-fluid.model2 {
   border: none;
   outline: none;
   margin: 0;
-  /* Removes any default margins */
   padding: 0;
 }
 
@@ -1194,68 +1542,40 @@ img.img-fluid.model2 {
 
 
 
-.product-cards .row {
-  margin: 0;
+
+
+
+
+.list-inline-item {
+  display: inline-block;
+  color: #FFF;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  text-transform: uppercase;
 }
 
-.product-cards .col-6 {
-  flex: 0 0 25%;
-  max-width: 25%;
-}
-
-.product-cards .img-fluid {
-  max-height: 200px;
-  /* Uniform height for images */
-  object-fit: cover;
-}
-
-@media (max-width: 992px) {
-  .left-column {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .product-cards .col-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-}
-
-@media (max-width: 576px) {
-  .product-cards .col-6 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .leftmargin {
-    margin-left: 0;
-    text-align: center;
-  }
-}
-
-footer {
-  padding: 40px 20px;
+.footer {
+  margin-top: 48px;
+  margin-bottom: -100px;
   font-family: "Alike", serif;
 }
 
-footer h5 {
+.footer h5 {
   font-size: 1.2rem;
   margin-bottom: 20px;
   font-weight: bold;
 }
 
-.list-inline-item{
-  margin-top: -30px;
-}
 .footer-links {
   list-style: none;
   padding: 0;
 }
 
 .footer-links li {
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 }
 
 .footer-links a {
@@ -1293,16 +1613,23 @@ footer h5 {
   font-style: normal;
   font-weight: 300;
   line-height: 20px;
-  /* 166.667% */
   text-transform: capitalize;
 }
 
 .input-container .input {
+  margin-top: 16px;
   width: 411px;
   height: 36px;
   flex-shrink: 0;
   margin-top: 16px;
   border-radius: 4px;
+  border: 0.5px solid #000;
+}
+
+.input-container {
+  width: 411px;
+  height: 36px;
+  flex-shrink: 0;
 }
 
 .email-input-wrapper p {
@@ -1311,10 +1638,11 @@ footer h5 {
 
 input[type="email"] {
   border-radius: 4px;
-  color: black;
   width: 411px;
   height: 36px;
   flex-shrink: 0;
+  border: 0.5px solid #000;
+
 }
 
 .h4 {
@@ -1326,12 +1654,6 @@ input[type="email"] {
 }
 
 
-
-
-
-
-
-
 .Copyright {
   color: #000;
   font-family: Lato;
@@ -1339,7 +1661,6 @@ input[type="email"] {
   font-style: normal;
   font-weight: 300;
   line-height: 20px;
-  /* 166.667% */
   text-transform: capitalize;
 }
 
@@ -1349,7 +1670,9 @@ input[type="email"] {
   margin: 16px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 48px;
+  margin-bottom: 28px;
+  width: 147px;
+  height: 25px;
 
 }
 
@@ -1364,12 +1687,24 @@ p {
 }
 
 .bottom {
-
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFF;
+  text-align: center;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 68px;
   display: flex;
-  align-items: center;
+  width: 195px;
+  padding: 10px;
   justify-content: center;
-
-
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #FFF;
 }
 
 .down {
@@ -1388,10 +1723,6 @@ img-fluid {
     margin-bottom: 20px;
   }
 }
-
-
-
-
 
 
 
